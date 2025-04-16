@@ -1,49 +1,90 @@
-# Expense_Tracking_System
-This is a GUI-based web application that interacts with a backend to perform analytics and track your daily expenses.
+# 💸 Expense Tracking System
 
-<h1 align="center">Hi 👋, I'm Neel Madhav</h1>
-<h3 align="center">A Python developer passionate about creating clean, efficient, and impactful applications</h3>
+A GUI-based web application that allows you to track, analyze, and visualize your daily expenses with ease. Built with **FastAPI** for the backend, **Streamlit** for the frontend, and **MySQL** as the database.
 
 ---
 
-🚀 Currently building a **GUI-based Expense Tracking System** using **FastAPI** (backend), **Streamlit** (frontend), and **MySQL** (database).  
-I enjoy bringing data to life through intuitive interfaces and smart analytics.
+## 🛠 Tech Stack
+
+- **Frontend:** Streamlit (Python)
+- **Backend:** FastAPI (Python)
+- **Database:** MySQL
+- **HTTP Requests:** `requests` module (Python)
+- **Environment:** Virtualenv (.venv)
 
 ---
 
-### 🛠️ Tech Stack
-- **Languages:** Python, SQL, HTML/CSS, JavaScript
-- **Frameworks & Libraries:** FastAPI, Streamlit, Pandas, NumPy, Scikit-Learn
-- **Tools:** Git, VSCode, PyCharm, MySQL Workbench
-- **Platforms:** GitHub, Streamlit Cloud, Docker (learning)
+## 🚀 Features
+
+- 📅 Add daily expenses with categories and notes  
+- 📊 View daily or range-based expense summaries  
+- 📈 Analytics with category-wise breakdown  
+- 🧠 Intuitive UI with Streamlit  
+- 🔄 CRUD operations handled via FastAPI
 
 ---
 
-### 📊 GitHub Stats
+## 📷 Screenshots
 
-![Neel's GitHub stats](https://github-readme-stats.vercel.app/api?username=neel-madhav&show_icons=true&theme=gruvbox)
-
----
-
-### 📌 Projects
-- 📊 [Expense Tracking System](https://github.com/neel-madhav/Expense_Tracking_System): Web app to track and visualize expenses with daily analytics.
-- 🤖 [Coming Soon] ML-powered recommendations based on spending behavior.
+_Add UI screenshots here to showcase your app interface._
 
 ---
 
-### 📚 Currently Learning
-- Building APIs with FastAPI
-- Frontend integration using Streamlit
-- Deployment on cloud platforms
+## 🧪 Run Locally
 
----
+### 1. Clone the Repository
+git clone https://github.com/your-username/Expense_Tracking_System.git
+cd Expense_Tracking_System
 
-### 📫 Let's Connect!
-- 💼 [LinkedIn](https://linkedin.com/in/yourname)
-- 🐙 [GitHub](https://github.com/neel-madhav)
-- 📬 Email: your.email@example.com
+### 2. Set up Virtual Environment
+python3 -m venv .venv
+source .venv/bin/activate
 
----
+### 3. Install Dependencies
+pip install -r requirements.txt
 
-<p align="center">✨ Open to collaborations, internships, and new ideas ✨</p>
+### 4. Set up MySQL Database
+CREATE DATABASE expense_manager;
 
+USE expense_manager;
+
+CREATE TABLE expenses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    expense_date DATETIME NOT NULL,
+    amount FLOAT NOT NULL,
+    category VARCHAR(255),
+    notes TEXT
+);
+
+### 5. Run Backend Server(FastAPI)
+cd Backend
+uvicorn main:app --reload
+
+### 6. Run Frontend App(Streamlit)
+cd ../Frontend
+streamlit run app.py
+
+## API Endpoints
+GET /expenses/{date} – Fetch all expenses for a date
+
+POST /expenses/{date} – Add or update expenses for a date
+
+POST /analytics/ – Get category-wise analytics for a date range
+
+## Project Structure
+Expense_Tracking_System/
+│
+├── Backend/
+│   ├── main.py
+│   ├── db_helper.py
+│   └── models.py
+│
+├── Frontend/
+│   └── app.py
+│
+├── requirements.txt
+└── README.md
+
+# Author
+Neel Madhav
+****
