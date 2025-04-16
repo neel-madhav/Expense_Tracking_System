@@ -72,19 +72,24 @@ POST /expenses/{date} – Add or update expenses for a date
 POST /analytics/ – Get category-wise analytics for a date range
 
 ## Project Structure
+
+The project is organized into the following directory structure:
+
+```bash
 Expense_Tracking_System/
 │
 ├── Backend/
-│   ├── main.py
-│   ├── db_helper.py
-│   └── models.py
+│   ├── main.py            # FastAPI app that handles all API routes
+│   ├── db_helper.py       # Functions for database interactions (MySQL)
+│   ├── models.py          # Pydantic models for data validation (e.g., for API requests/responses)
+│   └── requirements.txt   # Backend dependencies (FastAPI, MySQL, etc.)
 │
 ├── Frontend/
-│   └── app.py
+│   └── app.py             # Streamlit frontend app for user interaction
 │
-├── requirements.txt
-└── README.md
-
+├── .venv/                 # Virtual environment (ignore in Git)
+├── requirements.txt       # Project-wide dependencies (both frontend and backend)
+└── README.md              # Project documentation (this file)
 # Author
 Neel Madhav
 ****
